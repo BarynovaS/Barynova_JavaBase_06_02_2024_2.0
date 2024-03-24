@@ -31,6 +31,7 @@ class FitnessTracker {
         this.age = calculateAge();
     }
 
+
     // Розрахунок віку користувача
     private int calculateAge() {
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
