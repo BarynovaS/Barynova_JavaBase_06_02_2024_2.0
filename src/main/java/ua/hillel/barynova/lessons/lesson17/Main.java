@@ -11,12 +11,18 @@ public class Main {
 
     static void orderDrinks() {
         boolean wantMoreDrinks = true;
-        while (wantMoreDrinks) {
+        do {
             System.out.println("Choose a drink: ");
             for (DrinksMachine drink : DrinksMachine.values()) {
                 System.out.println(drink);
             }
             String choice = scanner.nextLine().toUpperCase();
+
+            if (!isValidChoice(choice)) {
+                System.out.println("Invalid choice. Please select a valid drink.");
+                continue;
+            }
+
             DrinksMachine selectedDrink = DrinksMachine.valueOf(choice);
             double price = calculatePrice(selectedDrink);
             prepareDrink(selectedDrink);
@@ -25,7 +31,16 @@ public class Main {
             System.out.println("Do you want to order another drink? (yes/no): ");
             String answer = scanner.nextLine().toLowerCase();
             wantMoreDrinks = answer.equals("yes");
+        } while (wantMoreDrinks);
+    }
+
+    static boolean isValidChoice(String choice) {
+        for (DrinksMachine drink : DrinksMachine.values()) {
+            if (drink.name().equals(choice)) {
+                return true;
+            }
         }
+        return false;
     }
 
     static double calculatePrice(DrinksMachine drink) {
@@ -46,7 +61,9 @@ public class Main {
                 return 0;
         }
     }
+
     static void prepareDrink(DrinksMachine drink) {
+        // Implement the logic to prepare each drink here
         System.out.println("Preparing " + drink);
     }
 }
