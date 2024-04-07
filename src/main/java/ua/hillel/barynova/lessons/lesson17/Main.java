@@ -8,7 +8,6 @@ public class Main {
         orderDrinks();
         System.out.println("Customer should pay: " + totalCost);
     }
-
     static void orderDrinks() {
         boolean wantMoreDrinks = true;
         do {
@@ -22,7 +21,6 @@ public class Main {
                 System.out.println("Invalid choice. Please select a valid drink.");
                 continue;
             }
-
             DrinksMachine selectedDrink = DrinksMachine.valueOf(choice);
             double price = calculatePrice(selectedDrink);
             prepareDrink(selectedDrink);
@@ -33,7 +31,6 @@ public class Main {
             wantMoreDrinks = answer.equals("yes");
         } while (wantMoreDrinks);
     }
-
     static boolean isValidChoice(String choice) {
         for (DrinksMachine drink : DrinksMachine.values()) {
             if (drink.name().equals(choice)) {
@@ -42,7 +39,6 @@ public class Main {
         }
         return false;
     }
-
     static double calculatePrice(DrinksMachine drink) {
         switch (drink) {
             case COFFEE:
@@ -61,7 +57,6 @@ public class Main {
                 return 0;
         }
     }
-
     static void prepareDrink(DrinksMachine drink) {
         System.out.println("Preparing " + drink);
     }
