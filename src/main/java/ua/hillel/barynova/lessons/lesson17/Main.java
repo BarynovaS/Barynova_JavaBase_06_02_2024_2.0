@@ -63,7 +63,6 @@ public class Main {
     }
 
     static void prepareDrink(DrinksMachine drink) {
-        // Implement the logic to prepare each drink here
         System.out.println("Preparing " + drink);
     }
 }
