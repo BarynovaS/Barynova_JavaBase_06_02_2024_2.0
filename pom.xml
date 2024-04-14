@@ -46,7 +46,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>ua.hillel.barynova.lessons.lesson17.Main</mainClass>
+                            <mainClass>ua.hillel.barynova.lessons.lesson18.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
